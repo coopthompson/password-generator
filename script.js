@@ -1,16 +1,25 @@
-function passLength() {
-    return parseInt(prompt('How long do you want your password to be?'));
+
+function passGenerator(length) {
+    let AllChars = [];
+    for (let i=32; i<127; i++) {
+        AllChars.push(String.fromCharCode(i));
+    }
+    let result = '';
+    let characters = AllChars.join('')
+    let trueChar = characters.trim()
+    let charactersLength = trueChar.length;
+    for ( i = 0; i < length; i++ ) {
+        result += trueChar.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
 }
 
-let length = passLength()
-const allChar = ['1','!', '2', '@','3','#','4','$','5','%','6','^','7','&','8','*',
-'9','(',')','-','_','+','=','q','Q','w','W','e','E','r','R','T','t','y','Y'
-,'u','U','i','I','o','O','P','p','[',']','{','}','a','A','s','S','d','D','f',
-'F','g','G','h','H','j','J','k','K','l','L',';',':','"',",",'z','Z','x','X',
-'c','`','~','v','b','B','n','N','m','M',',','<','>','.','>','/','?','\\','|'];
-const randomChar = allChar[Math.floor(Math.random() * allChar.length)];
+let trueLength = parseInt(prompt('How long do you want your password?'))
 
-console.log(randomChar)
+console.log(passGenerator(trueLength))
+
+
+
 
 
 
