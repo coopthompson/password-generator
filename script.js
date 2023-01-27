@@ -1,12 +1,9 @@
 const slider = document.getElementById("myRange");
 const output = document.querySelector(".slideDisplay");
 const passwordDisplay = document.querySelector(".displayBox");
-passwordDisplay.textContent = ''
-output.textContent = slider.value;
 
-slider.oninput = function() {
-    output.textContent = this.value;
-  }
+
+
 
 
 function generatePass(length) {
@@ -25,7 +22,15 @@ function generatePass(length) {
 }
 
 
+slider.addEventListener('mouseover', function changeOutputText() {
+    output.textContent = this.value
+})
+
 slider.addEventListener('click', function recordPasswordLength() {
+    slider.oninput = function() {
+        output.textContent = this.value;
+    };
+    output.textContent = slider.value;
     let trueLength = output.textContent;
     passwordDisplay.textContent = generatePass(trueLength);
 });
