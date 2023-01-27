@@ -1,3 +1,13 @@
+const slider = document.getElementById("myRange");
+const output = document.querySelector(".slideDisplay");
+const passwordDisplay = document.querySelector(".displayBox");
+passwordDisplay.textContent = ''
+output.textContent = slider.value;
+
+slider.oninput = function() {
+    output.textContent = this.value;
+  }
+
 
 function generatePass(length) {
     let AllChars = [];
@@ -14,9 +24,14 @@ function generatePass(length) {
     return result;
 }
 
-let trueLength = parseInt(prompt('How long do you want your password?'))
 
-console.log(generatePass(trueLength))
+slider.addEventListener('click', function recordPasswordLength() {
+    let trueLength = output.textContent;
+    passwordDisplay.textContent = generatePass(trueLength);
+});
+//let trueLength = output.textContent;
+
+
 
 
 
