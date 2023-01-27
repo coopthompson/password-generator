@@ -8,15 +8,14 @@ const passwordDisplay = document.querySelector(".displayBox");
 
 function generatePass(length) {
     let AllChars = [];
-    for (let i=32; i<127; i++) {
+    for (let i=33; i<127; i++) {
         AllChars.push(String.fromCharCode(i));
     }
     let result = '';
     let characters = AllChars.join('')
-    let trueCharacters = characters.trim()
-    let charactersLength = trueCharacters.length;
+    let charactersLength = characters.length;
     for ( i = 0; i < length; i++ ) {
-        result += trueCharacters.charAt(Math.floor(Math.random() * charactersLength));
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return result;
 }

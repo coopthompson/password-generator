@@ -1,0 +1,23 @@
+.projectBox {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 500px;
+}
+
+.slideWhole {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.displayBox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 45px;
+    font-size: 32px;
+    white-space: nowrap;
+}
+
