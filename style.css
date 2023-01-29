@@ -1,8 +1,16 @@
-.projectBox {
+.projectContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 100px;
+
+}
+
+.passwordGenerator {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 500px;
+    padding: 100px;
 }
 
 .slideWhole {
@@ -26,6 +34,8 @@
     flex-direction: column;
     margin-bottom: 30px;
     gap: 15px;
+    border: solid black 2px;
+    padding: 10px;
 }
 
 .checkBox {
@@ -35,3 +45,4 @@
     align-items: center;
     gap: 5px;
 }
+

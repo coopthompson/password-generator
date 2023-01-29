@@ -61,7 +61,6 @@ slider.addEventListener('click', function recordPasswordLength() {
     let trueLength = output.textContent;
     passwordDisplay.textContent = generatePass(trueLength);
 });
-//let trueLength = output.textContent;
 
 
 
