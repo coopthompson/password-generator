@@ -4,6 +4,7 @@ const passwordDisplay = document.querySelector(".displayBox");
 const numberCheck = document.querySelector("#numbers");
 const capitalCheck = document.querySelector("#capitalLetters");
 const specialCheck = document.querySelector("#specialCharacters");
+const allCheck = document.querySelector(".allButton")
 const passwordContents = document.querySelector(".passwordContents");
 const checkBoxes = document.querySelectorAll(".checkBox")
 const copyButton = document.querySelector(".copyButton")
@@ -63,6 +64,7 @@ slider.addEventListener('click', function recordPasswordLength() {
 let numbVal = 0
 let capVal = 0
 let specVal = 0
+let allVal = 0
 let newPass = ''
 
 
@@ -76,7 +78,6 @@ checkBoxes.forEach(checkBox =>
             newPass = passwordContents.textContent.replace(', capital letters','')
             passwordContents.textContent = newPass;
             capVal = 0
-
         }
         if (numberCheck.checked === true && newPass.search(', numbers') === -1 && numbVal <= 0) {
             numbVal++;
@@ -85,8 +86,7 @@ checkBoxes.forEach(checkBox =>
         } else if (numberCheck.checked === false && newPass.search(', numbers') > -1) {
             newPass = passwordContents.textContent.replace(', numbers','')
             passwordContents.textContent = newPass;
-            numbVal = 0
-
+            numbVal = 0;
         }
         if (specialCheck.checked === true && newPass.search(', special characters') === -1 && specVal <= 0) {
             specVal++;
@@ -97,17 +97,31 @@ checkBoxes.forEach(checkBox =>
             passwordContents.textContent = newPass;
             specVal = 0
         }
-        
-    })
-);
+}));
 
+allCheck.addEventListener('click', function() {
+    if (newPass.search(', special characters') === -1 || newPass.search(', capital letters') === -1 || newPass.search(', numbers') === -1) {
+        specialCheck.checked = true;
+        numberCheck.checked = true;
+        capitalCheck.checked = true;
+        newPass = 'Password contains: lowercase letters, capital letters, numbers, special characters';
+        passwordContents.textContent = newPass;
+        capVal++
+        numbVal++
+        specVal++
+    } 
+    
+    
+    
 copyButton.addEventListener('click', function() {
     if (passwordDisplay.textContent.length < 3) {
-        return;
+            return;
     }
     navigator.clipboard.writeText(passwordDisplay.textContent);
     alert('Copied to clipboard!')
+    })
 })
+
     
 
 
