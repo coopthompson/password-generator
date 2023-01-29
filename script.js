@@ -6,6 +6,7 @@ const capitalCheck = document.querySelector("#capitalLetters");
 const specialCheck = document.querySelector("#specialCharacters");
 const passwordContents = document.querySelector(".passwordContents");
 const checkBoxes = document.querySelectorAll(".checkBox")
+const copyButton = document.querySelector(".copyButton")
 
 
 function generatePass(length) {
@@ -99,6 +100,14 @@ checkBoxes.forEach(checkBox =>
         
     })
 );
+
+copyButton.addEventListener('click', function() {
+    if (passwordDisplay.textContent.length < 3) {
+        return;
+    }
+    navigator.clipboard.writeText(passwordDisplay.textContent);
+    console.log('password copied!')
+})
     
 
 
