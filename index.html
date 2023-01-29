@@ -10,7 +10,10 @@
 <body>
     <div class="projectContainer">
       <div class="passwordGenerator">
-        <div class="passwordContents">Password contains: lowercase letters</div>
+        <div class="headerContainer">
+          <p>Password Generator</p>
+          <div class="passwordContents">Password contains: lowercase letters</div>
+        </div>
         <div class="displayBox">&nbsp;</div>
         <div class="slideWhole">
           <div class="slideDisplay">Length of Password</div>
@@ -20,20 +23,23 @@
         </div>
         <button class="copyButton">Copy</button>
       </div>
-      <div class="checkBoxContainer">
-        <div class="checkBox">
-          <label for="capitalLetters"> Capital Letters </label>
-          <input type="checkbox" id="capitalLetters" name="accept" value="yes">
-        </div>
-        <div class="checkBox">
-          <label for="numbers"> Numbers </label>
-          <input type="checkbox" id="numbers" name="accept" value="yes">
-        </div>
-        <div class="checkBox">
-          <label for="specialCharacters"> Special Characters </label>
-          <input type="checkbox" id="specialCharacters" name="accept" value="yes">
-        </div>
+      <div class="addOnsContainer">
         <button class="allButton">All Characters</button>
+        <div class="checkBoxContainer">
+          <div class="checkBox">
+            <label for="capitalLetters"> Capital Letters </label>
+            <input type="checkbox" id="capitalLetters" name="accept" value="yes">
+          </div>
+          <div class="checkBox">
+            <label for="numbers"> Numbers </label>
+            <input type="checkbox" id="numbers" name="accept" value="yes">
+          </div>
+          <div class="checkBox">
+            <label for="specialCharacters"> Special Characters </label>
+            <input type="checkbox" id="specialCharacters" name="accept" value="yes">
+          </div>
+      </div>
+        
       </div>
     </div>
     <script src="script.js" defer></script>

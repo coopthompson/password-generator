@@ -109,18 +109,16 @@ allCheck.addEventListener('click', function() {
         capVal++
         numbVal++
         specVal++
-    } 
-    
-    
+    };
+});
     
 copyButton.addEventListener('click', function() {
     if (passwordDisplay.textContent.length < 3) {
             return;
-    }
+    };
     navigator.clipboard.writeText(passwordDisplay.textContent);
-    alert('Copied to clipboard!')
-    })
-})
+    alert('Copied to clipboard!');
+});
 
     
 
