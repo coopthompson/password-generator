@@ -106,7 +106,7 @@ copyButton.addEventListener('click', function() {
         return;
     }
     navigator.clipboard.writeText(passwordDisplay.textContent);
-    console.log('password copied!')
+    alert('Copied to clipboard!')
 })
     
 
